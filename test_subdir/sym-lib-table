@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "ft")(type "Legacy")(uri "${KIPRJMOD}/lib/FT2232H.lib")(options "")(descr "FT2232H test"))
-  (lib (name "test_subdir-rescue")(type "KiCad")(uri "${KIPRJMOD}/test_subdir-rescue.kicad_sym")(options "")(descr ""))
-)
