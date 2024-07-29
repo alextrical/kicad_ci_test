@@ -19,13 +19,13 @@ jobs:
     - uses: INTI-CMNB/KiBot@v2_k8
       with:
         # Required - kibot config file
-        config: config.kibot.yaml
+        config: test_subdir/config.kibot.yaml
         # optional - prefix to output defined in config
         dir: output
         # optional - schematic file
-        schema: 'schematic.sch'
+        schema: 'test_subdir.sch'
         # optional - PCB design file
-        board: 'pcb.kicad_pcb'
+        board: 'test_subdir.kicad_pcb'
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
