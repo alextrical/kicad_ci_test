@@ -109,7 +109,7 @@ So then other jobs can get the needed files using:
 
 ```
     - name: Get submodule
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: Submodule
         path: test_subdir/lib
