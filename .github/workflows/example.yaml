@@ -23,9 +23,9 @@ jobs:
         # optional - prefix to output defined in config
         dir: output
         # optional - schematic file
-        schema: 'test_subdir.sch'
+        schema: 'test_subdir/test_subdir.sch'
         # optional - PCB design file
-        board: 'test_subdir.kicad_pcb'
+        board: 'test_subdir/test_subdir.kicad_pcb'
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
