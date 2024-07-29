@@ -23,7 +23,7 @@ jobs:
         # optional - prefix to output defined in config
         dir: output
         # optional - schematic file
-        schema: 'test_subdir/test_subdir.sch'
+        schema: 'test_subdir/test_subdir.kicad_sch'
         # optional - PCB design file
         board: 'test_subdir/test_subdir.kicad_pcb'
     - name: upload results
