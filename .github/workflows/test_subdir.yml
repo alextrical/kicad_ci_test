@@ -28,7 +28,7 @@ jobs:
         submodules: 'true'
 
     - name: Store submodule
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: Submodule
         path: test_subdir/lib
@@ -53,7 +53,7 @@ jobs:
         make -C test_subdir/ erc
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: ERC_Output
         path: test_subdir/Fabrication
@@ -77,7 +77,7 @@ jobs:
         make -C test_subdir/ drc
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: DRC_Output
         path: test_subdir/Fabrication
@@ -102,7 +102,7 @@ jobs:
         make -C test_subdir/ sch_fab
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: FabSch_Output
         path: test_subdir/Fabrication
@@ -127,7 +127,7 @@ jobs:
         make -C test_subdir/ pcb_fab
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: FabPCB_Output
         path: test_subdir/Fabrication

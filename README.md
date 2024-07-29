@@ -47,7 +47,7 @@ on:
 
 ```
  - name: Recuperar resultados
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: ERC_Output
         path: Fabrication
@@ -99,7 +99,7 @@ Then this job creates an artifcat containig the submodule using:
 
 ```
     - name: Store submodule
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: Submodule
         path: test_subdir/lib
