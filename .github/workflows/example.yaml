@@ -12,19 +12,19 @@ on:
       - '**.kicad_pcb'
 
 jobs:
-  get_submodules:
-    runs-on: ubuntu-latest
+  # get_submodules:
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: 'true'
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #     with:
+  #       submodules: 'true'
 
-    - name: Store submodule
-      uses: actions/upload-artifact@v4
-      with:
-        name: Submodule
-        path: test_subdir/library
+  #   - name: Store submodule
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: Submodule
+  #       path: test_subdir/library
 
   # ERC:
   #   runs-on: ubuntu-latest
@@ -54,11 +54,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Get submodule
-      uses: actions/download-artifact@v4
       with:
-        name: Submodule
-        path: test_subdir/library
+        submodules: 'true'
+    # - name: Get submodule
+    #   uses: actions/download-artifact@v4
+    #   with:
+    #     name: Submodule
+    #     path: test_subdir/library
     - uses: INTI-CMNB/KiBot@v2_k8
       with:
         # Required - kibot config file
