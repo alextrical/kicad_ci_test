@@ -1,6 +1,18 @@
 kiplot:
   version: 1
 
+preflight:
+  run_erc:
+    enabled: true
+    dir: test_subdir/Fabrication
+  fill_zones: true
+  update_xml: true
+  run_drc:
+    enabled: true
+    dir: test_subdir/Fabrication
+  check_zone_fills: true
+  ignore_unconnected: false
+
 outputs:
  - name: Make STEP
    comment: "Generate STEP File"
