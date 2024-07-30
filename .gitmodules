@@ -1,3 +1,6 @@
 [submodule "test_subdir/lib"]
 	path = test_subdir/lib
 	url = git@github.com:FutureProofHomes/Kicad-Libraries.git
+[submodule "test_subdir/library"]
+	path = test_subdir/library
+	url = git@github.com:FutureProofHomes/Kicad-Libraries.git
