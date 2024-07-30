@@ -117,3 +117,6 @@ So then other jobs can get the needed files using:
 
 In this way we get the submodules and we don't need to add *git* to *kicad_auto*.
 
+
+Notes:
+git submodule add git@github.com:FutureProofHomes/Kicad-Libraries.git test_subdir/lib
