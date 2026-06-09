@@ -41,7 +41,7 @@ on:
 * Each action takes the repo content as input using:
 
 ```
-- uses: actions/checkout@v4
+- uses: actions/checkout@v6
 ```
 
 * The actions are executed by KiBot and stored in the *Fabrication* directory
@@ -50,7 +50,7 @@ on:
 
 ```
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ERC_Output
         path: Fabrication
@@ -91,7 +91,7 @@ Another detail is how to checkout the submodules. One option is to use the *subm
 *checkout* action, like this:
 
 ```
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: 'true'
 ```

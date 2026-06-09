@@ -32,7 +32,7 @@ jobs:
     container: ghcr.io/inti-cmnb/kicad8_auto:latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: 'true'
 
@@ -42,7 +42,7 @@ jobs:
         make -C test_subdir/ erc
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ERC_Output
         path: test_subdir/Fabrication
@@ -53,7 +53,7 @@ jobs:
     needs: ERC
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: 'true'
 
@@ -62,7 +62,7 @@ jobs:
         make -C test_subdir/ drc
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: DRC_Output
         path: test_subdir/Fabrication
@@ -74,7 +74,7 @@ jobs:
     needs: ERC
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: 'true'
 
@@ -83,7 +83,7 @@ jobs:
         make -C test_subdir/ sch_fab
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: FabSch_Output
         path: test_subdir/Fabrication
@@ -95,7 +95,7 @@ jobs:
     needs: DRC
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: 'true'
 
@@ -104,7 +104,7 @@ jobs:
         make -C test_subdir/ pcb_fab
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: FabPCB_Output
         path: test_subdir/Fabrication

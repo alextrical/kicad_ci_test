@@ -32,14 +32,14 @@ jobs:
     container: ghcr.io/inti-cmnb/kicad8_auto:dev
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Run ERC
       run: |
         [ -f *.kicad_sch ] && kibot  -d Fabrication -s update_xml,run_drc -i
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ERC_Output
         path: Fabrication
@@ -50,14 +50,14 @@ jobs:
     needs: ERC
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Run DRC
       run: |
         [ -f *.kicad_pcb ] && kibot  -d Fabrication -s update_xml,erc -i
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: DRC_Output
         path: Fabrication
@@ -69,14 +69,14 @@ jobs:
     needs: ERC
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Run schematic stuff
       run: |
         [ -f *.kicad_sch ] && kibot  -d Fabrication -s drc,erc print_sch bom_html
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: FabSch_Output
         path: Fabrication
@@ -89,14 +89,14 @@ jobs:
     needs: DRC
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Run PCB stuff
       run: |
         [ -f *.kicad_pcb ] && kibot  -d Fabrication -s all print_front gerbers _blender_3d_top
 
     - name: Retrieve results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: FabPCB_Output
         path: Fabrication
